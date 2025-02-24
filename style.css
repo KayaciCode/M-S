@@ -12,13 +12,13 @@ body {
     overflow-x: hidden;
 }
 
-
+/* Navigasyon */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.9);
-    padding: 15px 20px; /* Mobilde daha az padding */
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,16 +28,22 @@ body {
 
 .navbar h1 {
     font-family: 'Parisienne', cursive;
-    font-size: 1.8em; /* Mobilde küçült */
+    font-size: 1.8em;
     color: #ff4081;
 }
 
-.navbar ul {
+.menu-toggle {
+    display: none; /* Masaüstünde gizli */
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.nav-menu {
     display: flex;
     list-style: none;
 }
 
-.navbar ul li a {
+.nav-menu li a {
     text-decoration: none;
     color: #6d4c41;
     font-family: 'Roboto', sans-serif;
@@ -46,13 +52,13 @@ body {
     transition: all 0.3s ease;
 }
 
-.navbar ul li a:hover {
+.nav-menu li a:hover {
     color: #ff4081;
     background: rgba(255, 64, 129, 0.1);
     border-radius: 20px;
 }
 
-
+/* Hero Bölümü */
 .hero {
     height: 100vh;
     position: relative;
@@ -83,14 +89,14 @@ body {
 
 .hero-title {
     font-family: 'Parisienne', cursive;
-    font-size: 3em; 
+    font-size: 3em;
     text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
     animation: fadeIn 2s ease-in-out;
 }
 
 .hero-subtitle {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.4em; 
+    font-size: 1.4em;
     font-weight: 300;
     margin-top: 15px;
     text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
@@ -103,17 +109,17 @@ body {
     animation: heartbeat 1.5s infinite;
 }
 
-
+/* Genel Bölüm Stili */
 .section-title {
     font-family: 'Parisienne', cursive;
-    font-size: 2.5em; 
+    font-size: 2.5em;
     color: #ff4081;
     text-align: center;
     margin-bottom: 30px;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
 }
 
-
+/* Anılar Bölümü */
 .memories {
     padding: 40px 20px;
     background: #fff;
@@ -142,8 +148,8 @@ body {
 }
 
 .memory-img, .memory video, .memory audio {
-    width: 100%; 
-    max-width: 100%; 
+    width: 100%;
+    max-width: 100%;
     margin: 15px auto;
     display: block;
     border-radius: 10px;
@@ -156,9 +162,10 @@ body {
     bottom: 10px;
     right: 10px;
     animation: heartbeat 2s infinite;
+    opacity: 0; /* Scroll ile görünecek */
 }
 
-
+/* Galeri Bölümü */
 .gallery {
     padding: 40px 20px;
     background: #f9f9f9;
@@ -167,7 +174,7 @@ body {
 
 .photo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 15px;
     max-width: 100%;
     margin: 0 auto;
@@ -184,7 +191,7 @@ body {
     transform: scale(1.08);
 }
 
-
+/* Mektup Bölümü */
 .letter {
     padding: 40px 20px;
     background: #fff;
@@ -199,7 +206,7 @@ body {
     line-height: 1.8;
 }
 
-
+/* Footer */
 .footer {
     padding: 20px;
     background: #ff4081;
@@ -209,6 +216,7 @@ body {
     font-size: 1em;
 }
 
+/* Animasyonlar */
 @keyframes fadeIn {
     0% { opacity: 0; transform: translateY(30px); }
     100% { opacity: 1; transform: translateY(0); }
@@ -222,21 +230,44 @@ body {
     100% { transform: scale(1); }
 }
 
-
+/* Mobil Uyumluluk için Media Queries */
 @media (max-width: 768px) {
     .navbar {
+        padding: 10px 15px;
+        flex-direction: row; /* Hamburger için row kalır */
+    }
+
+    .navbar h1 {
+        font-size: 1.4em;
+    }
+
+    .menu-toggle {
+        display: block; /* Hamburger ikonu görünür */
+    }
+
+    .nav-menu {
+        display: none; /* Varsayılan olarak gizli */
         flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 50px; /* Navbar yüksekliğine göre ayarlandı */
+        left: 0;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu.active {
+        display: flex; /* Tıklanınca açılır */
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+
+    .nav-menu li a {
+        display: block;
         padding: 10px;
-    }
-
-    .navbar ul {
-        margin-top: 10px;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .navbar ul li {
-        margin: 5px 0;
+        font-size: 0.9em;
     }
 
     .hero-title {
@@ -274,7 +305,11 @@ body {
 
 @media (max-width: 480px) {
     .navbar h1 {
-        font-size: 1.5em;
+        font-size: 1.2em;
+    }
+
+    .nav-menu li a {
+        font-size: 0.85em;
     }
 
     .hero-title {
