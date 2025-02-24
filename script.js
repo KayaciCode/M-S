@@ -1,9 +1,9 @@
-// Hamburger menü toggle
+
 document.querySelector('.menu-toggle').addEventListener('click', () => {
     document.querySelector('.nav-menu').classList.toggle('active');
 });
 
-// Smooth Scroll
+
 document.querySelectorAll('.navbar a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -13,21 +13,21 @@ document.querySelectorAll('.navbar a').forEach(anchor => {
     });
 });
 
-// Fotoğraflara tıklama efekti
+
 document.querySelectorAll('.gallery-img').forEach(img => {
     img.addEventListener('click', () => {
         img.classList.toggle('enlarged');
     });
 });
 
-// Hoş geldin mesajı
+
 window.onload = () => {
     setTimeout(() => {
         alert("Sevgilim, senin için hazırladığım bu özel dünyaya hoş geldin! 💕");
     }, 500);
 };
 
-// Kalp animasyonları, Video ve Şarkı otomatik oynatma
+
 window.addEventListener('scroll', () => {
     document.querySelectorAll('.small-heart').forEach(heart => {
         const heartPos = heart.getBoundingClientRect().top;
