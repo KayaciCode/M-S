@@ -12,7 +12,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Navigasyon */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -47,7 +47,7 @@ body {
     border-radius: 20px;
 }
 
-/* Hero Bölümü */
+
 .hero {
     height: 100vh;
     position: relative;
@@ -98,7 +98,7 @@ body {
     animation: heartbeat 1.5s infinite;
 }
 
-/* Genel Bölüm Stili */
+
 .section-title {
     font-family: 'Parisienne', cursive;
     font-size: 3em;
@@ -108,7 +108,7 @@ body {
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Anılar Bölümü */
+
 .memories {
     padding: 80px 60px;
     background: #fff;
@@ -153,7 +153,6 @@ body {
     animation: heartbeat 2s infinite;
 }
 
-/* Galeri Bölümü */
 .gallery {
     padding: 80px 60px;
     background: #f9f9f9;
@@ -179,7 +178,7 @@ body {
     transform: scale(1.08);
 }
 
-/* Mektup Bölümü */
+
 .letter {
     padding: 80px 60px;
     background: #fff;
@@ -194,7 +193,7 @@ body {
     line-height: 2;
 }
 
-/* Footer */
+
 .footer {
     padding: 30px;
     background: #ff4081;
@@ -204,7 +203,7 @@ body {
     font-size: 1.2em;
 }
 
-/* Animasyonlar */
+
 @keyframes fadeIn {
     0% { opacity: 0; transform: translateY(30px); }
     100% { opacity: 1; transform: translateY(0); }
